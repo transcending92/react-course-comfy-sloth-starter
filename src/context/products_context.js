@@ -57,14 +57,14 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR })
     }
   }
-
-
+  
   useEffect(() => {
     fetchProducts(url)
   }, [])
 
   return (
-    <ProductsContext.Provider value={{...state,openSidebar,closeSidebar, fetchSingleProduct}}>
+    <ProductsContext.Provider value={
+      {...state, openSidebar, closeSidebar, fetchSingleProduct}}>
       {children}
     </ProductsContext.Provider>
   )
