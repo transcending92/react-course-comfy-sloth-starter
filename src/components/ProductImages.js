@@ -8,7 +8,7 @@ const ProductImages = ({images = [{url:''}] }) => {
       <img src={main.url} alt='main image' className='main'/>
       <div className='gallery'>
         {images.map((image,index) => {
-          retur( 
+          return( 
           <img 
             src={image.url} 
             alt={image.filename} 
