@@ -10,10 +10,28 @@ const Filters = () => {
       text,category,company,color,min_price,price,max_price,shipping},
       updateFilters, clearFilters, all_products
   } = useFilterContext();
+
+  const categories = getUniqueValues(all_products,'category')
+  const companies = getUniqueValues(all_products,'company')
+  const colors = getUniqueValues(all_products,'colors')
+
   return (
     <Wrapper>
       <div className='content'>
-        <form onSubmit={(e) => e.preventDefault()}></form>
+        <form onSubmit={(e) => e.preventDefault()}>
+          {/* search input */}
+          <div className='form-control'>
+            <input 
+              type='text' 
+              name='text' 
+              placeholder='search' 
+              className='search-input'
+              value={text}
+              onChange={updateFilters} 
+              />
+          </div>
+          {/* end search input */}
+        </form>
       </div> 
     </Wrapper>
   )
