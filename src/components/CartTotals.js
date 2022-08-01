@@ -25,6 +25,9 @@ const CartTotals = () => {
             <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
         </article>
+        <Link to='/checkout' className='btn'>
+          proceed to checkout
+        </Link>
       </div>
     </Wrapper>
   )
