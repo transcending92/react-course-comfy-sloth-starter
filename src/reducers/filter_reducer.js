@@ -56,8 +56,20 @@ if(action.type === UPDATE_FILTERS){
   return {...state,filters:{...state.filters,[name]:value}}
   }
 if(action.type === FILTER_PRODUCTS){
+  const {all_products} = state
+  const {text,category,company,color,price,shipping} = state.filters
 
-  return {...state}
+
+
+  let tempProducts = [...all_products]
+  if(text){
+    tempProducts = tempProducts.filter((product) => {
+      return (
+        
+      )
+    })
+  }
+  return {...state, filtered_products: tempProducts }
 }
 if(action.type === CLEAR_FILTERS){
   return {...state,
