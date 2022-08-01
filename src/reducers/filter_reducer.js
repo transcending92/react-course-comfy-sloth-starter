@@ -11,9 +11,9 @@ import {
 
 const filter_reducer = (state, action) => {
   if(action.type === LOAD_PRODUCTS){
-    let maxPrice = action.payload.map((p) => {
+    let maxPrice = action.payload.map((p) => p.price)
     maxPrice = Math.max(...maxPrice)
-    })
+    
     return {
       ...state,
       all_products:[...action.payload],
@@ -56,6 +56,7 @@ if(action.type === UPDATE_FILTERS){
   return {...state,filters:{...state.filters,[name]:value}}
   }
 if(action.type === FILTER_PRODUCTS){
+
   return {...state}
 }
 if(action.type === CLEAR_FILTERS){
