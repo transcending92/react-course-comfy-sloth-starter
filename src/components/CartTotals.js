@@ -21,7 +21,7 @@ const CartTotals = () => {
           </p>
           <hr />
           <h4>
-            order total :  {' '} 
+            order total :  {''} 
             <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
         </article>
